@@ -3,6 +3,7 @@ body {
     transition:
         background-image var(--transition-duration) var(--transition-timing),
         color var(--transition-duration) var(--transition-timing);
+    height: auto;
 }
 
 /* ESTILIZAÇÃO FORMULÁRIO */
@@ -17,6 +18,7 @@ body {
     --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
     --button-color: linear-gradient(135deg, #4a7b29, #6c8f3e);
+    --logo-color: url(img/VIVAICON-removebg-preview.png);
     /* Adicionei essa que estava faltando */
 
 
@@ -34,11 +36,19 @@ body {
     --switch-bg-url: url(img/moon-stars.svg);
     --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.05);
+    --logo-color: url(img/LOGOBRANCA.png);
 
     --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
 
     --background-gradient: linear-gradient(to bottom, #121212, #333333 50%);
+    --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    --form-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .form-container {
+    box-shadow: var(--form-shadow);
+    border: var(--form-border);
 }
 
 .form-container,
@@ -94,7 +104,7 @@ body {
     padding: 2rem;
     color: var(--text-color);
     position: absolute;
-    top: 39%;
+    top: 40%;
 }
 
 .title {
@@ -159,7 +169,6 @@ body {
     border: none;
     border-radius: 14px;
     font-weight: 600;
-    font-size: 20px;
 }
 
 .social-message {
@@ -387,3 +396,12 @@ body {
 .mode-transition {
     animation: pulse 0.6s var(--transition-timing);
 } */
+
+#logo-image {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Para uma transição mais suave durante a troca */
+.logo-transition {
+    opacity: 0;
+}

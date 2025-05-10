@@ -1,23 +1,32 @@
 function toggleMode() {
   const html = document.documentElement;
-  html.classList.toggle("dark");
+  const logoImage = document.getElementById("logo-image");
 
-  // Adiciona classe de transição
-  body.classList.add("mode-transition");
+  // Inicia transição
+  logoImage.classList.add("logo-transition");
 
-  // Alterna modo escuro
-  html.classList.toggle("dark");
+  // Espera a transição de fade out terminar
+  setTimeout(() => {
+    html.classList.toggle("dark");
 
-  // Atualiza o botão do switch (opcional)
+    // Alterna a imagem
+    if (html.classList.contains("dark")) {
+      logoImage.src = "img/LOGOBRANCA.png";
+    } else {
+      logoImage.src = "img/VIVAICON-removebg-preview.png";
+    }
+
+    // Remove a classe de transição após a troca
+    setTimeout(() => {
+      logoImage.classList.remove("logo-transition");
+    }, 10);
+  }, 100); // Tempo deve corresponder à duração da transição CSS
+
+  // Atualiza o botão do switch
   const switchButton = document.querySelector("#switch button");
   switchButton.style.backgroundImage = html.classList.contains("dark")
-    ? "url('img/moon-stars.svg')"
-    : "url('img/sun.svg')";
-
-  // Remove a classe após a animação
-  setTimeout(() => {
-    body.classList.remove("mode-transition");
-  }, 600);
+    ? "url('img/sun.svg')"
+    : "url('img/moon-stars.svg')";
 }
 
 // Inicialização
