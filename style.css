@@ -19,6 +19,7 @@ body {
     --surface-color: rgba(0, 0, 0, 0.05);
     --button-color: linear-gradient(135deg, #4a7b29, #6c8f3e);
     --logo-color: url(img/VIVAICON-removebg-preview.png);
+    --border-switch-color: 2px solid rgba(0, 0, 0, 0.571);
     /* Adicionei essa que estava faltando */
 
 
@@ -37,8 +38,9 @@ body {
     --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.05);
     --logo-color: url(img/LOGOBRANCA.png);
+    --border-switch-color: 2px solid rgba(61, 61, 61, 0.5);
 
-    --stroke-color: rgba(0, 0, 0, 0.5);
+    --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
 
     --background-gradient: linear-gradient(to bottom, #121212, #333333 50%);
@@ -321,6 +323,7 @@ body {
     background: white var(--switch-bg-url) no-repeat center;
     border: 0;
     border-radius: 50%;
+    border: var(--border-switch-color);
 
     position: absolute;
     top: 50%;
