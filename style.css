@@ -1,0 +1,389 @@
+body {
+    background-image: var(--background-gradient);
+    transition:
+        background-image var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing);
+}
+
+/* ESTILIZAÇÃO FORMULÁRIO */
+
+:root {
+    --switch-bg-url: url(img/sun.svg);
+    --form-color: #eaeaea;
+    --back-button-color: #f5f5f5;
+    --text-color: #737373;
+    --input-color: #fff;
+    --title-color: #000;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --button-color: linear-gradient(135deg, #4a7b29, #6c8f3e);
+    /* Adicionei essa que estava faltando */
+
+
+    --background-gradient: linear-gradient(to bottom, #f0eeef, #555555 50%);
+    --transition-duration: 0.4s;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+    --form-color: #22211f;
+    --back-button-color: #333438;
+    --text-color: #a6a6a6;
+    --input-color: #333438;
+    --title-color: #fff;
+    --switch-bg-url: url(img/moon-stars.svg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+
+    --background-gradient: linear-gradient(to bottom, #121212, #333333 50%);
+}
+
+.form-container,
+.input-group input,
+#switch span {
+    transition:
+        background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing),
+        border-color var(--transition-duration) var(--transition-timing);
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.toggle-animation {
+    animation: fadeScale 0.4s ease-in-out;
+}
+
+@keyframes fadeScale {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.form-container {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    background-color: var(--form-color);
+    padding: 2rem;
+    color: var(--text-color);
+    position: absolute;
+    top: 39%;
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+    line-height: 2rem;
+    font-weight: 700;
+    color: var(--title-color);
+    transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.form {
+    margin-top: 1.5rem;
+}
+
+.input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    border-radius: 14px;
+    outline: 0;
+    background-color: var(--input-color);
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+}
+
+.forgot {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--text-color);
+    margin: 8px 0 14px 0;
+}
+
+.forgot a,
+.signup a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sign {
+    display: block;
+    width: 100%;
+    background: var(--button-color);
+    /* blue button */
+    padding: 0.75rem;
+    text-align: center;
+    color: #fff;
+    /* white text */
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.social-message {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: #ccc;
+}
+
+.social-message .message {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--text-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons .icon {
+    border-radius: 0.125rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 8px;
+}
+
+.social-icons .icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: #fff;
+}
+
+.signup {
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--text-color);
+}
+
+
+
+/* ESTILIZAÇÃO DO BOTÃO PARA VOLTAR */
+
+
+
+.styled-wrapper .button {
+    z-index: 10;
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.styled-wrapper .button:before {
+    content: "";
+    background-color: var(--back-button-color);
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+    border: 2px solid var(--back-button-color);
+    transition:
+        opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+    border: 2px solid #599a53;
+    transform: scale(1.3);
+    transition:
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+}
+
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+    display: flex;
+    position: absolute;
+    top: -11px;
+    left: -7px;
+}
+
+.styled-wrapper .button-elem {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 24px 18px 0 22px;
+    transform: rotate(360deg);
+    fill: #f0eeef;
+}
+
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-69px);
+}
+
+/* SWITCH PARA MODO CLARO E ESCURO */
+
+#switch {
+    z-index: 10;
+    position: fixed;
+    width: 64px;
+    margin-top: 20px;
+    margin-right: 20px;
+    right: 0
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    animation: slide-back .2s;
+
+    transition:
+        left var(--transition-duration) var(--transition-timing),
+        background-image var(--transition-duration) var(--transition-timing),
+        transform var(--transition-duration) var(--transition-timing);
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.dark #switch button {
+    animation: slide-in .3s forwards;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 9999px;
+
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+/* PULSE EFFECT ON TOGGLE
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.mode-transition {
+    animation: pulse 0.6s var(--transition-timing);
+} */

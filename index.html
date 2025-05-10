@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      .header-image {
+        width: 60%;
+        height: 250px; /* Altura ajustável conforme necessário */
+        object-fit: cover;
+        margin-bottom: 20px;
+        margin: auto;
+      }
+
+      .dad-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="switch" onclick="toggleMode()">
+      <button></button>
+      <span></span>
+    </div>
+
+    <!-- BOTÃO PARA VOLTAR -->
+    <div class="styled-wrapper">
+      <button class="button">
+        <div class="button-box">
+          <span class="button-elem">
+            <img src="img/arrow.png" alt="" width="15px" />
+          </span>
+          <span class="button-elem">
+            <img src="img/arrow.png" alt="" width="15px" />
+          </span>
+        </div>
+      </button>
+    </div>
+
+    <!-- IMAGEM DE CABEÇALHO -->
+    <img
+      src="img/VIVAICON-removebg-preview.png"
+      alt="Imagem decorativa"
+      class="header-image"
+    />
+
+    <!-- FORMULÁRIO DE LOGIN -->
+    <div class="dad-form h-screen">
+      <div class="form-container">
+        <p class="title">Criar conta</p>
+        <form class="form">
+          <div class="input-group">
+            <label for="username">Nome Completo</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Neymar Júnior"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="username">Email Institucional</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="njsilva@gmail.com"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="username">Número de Matrícula</label>
+            <input
+              type="number"
+              name="username"
+              id="username"
+              placeholder="10101"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="xxxxxxxx"
+              required
+            />
+            <div class="forgot">
+              <a rel="noopener noreferrer" href="#"
+                >Esqueceu a
+                <span class="font-bold underline" style="color: #597731">
+                  senha</span
+                >?</a
+              >
+            </div>
+          </div>
+          <button class="sign font-bold">Cadastrar</button>
+        </form>
+        <div class="social-message">
+          <div class="line"></div>
+          <p class="message">
+            Já tem uma conta?
+            <span class="font-bold text-[#597731] underline">Entrar</span>
+          </p>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
