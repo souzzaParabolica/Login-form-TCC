@@ -5,7 +5,7 @@ body {
         color var(--transition-duration) var(--transition-timing);
 }
 
-/* ESTILIZAÇÃO FORMULÁRIO */
+/* VARIÁVEIS */
 
 :root {
     --switch-bg-url: url(img/sun.svg);
@@ -46,6 +46,8 @@ body {
     --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
     --form-border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* ESTILIZAÇÃO FORMULÁRIO */
 
 .dark .form-container {
     box-shadow: var(--form-shadow);
@@ -379,25 +381,6 @@ body {
         left: 0;
     }
 }
-
-/* PULSE EFFECT ON TOGGLE
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.01);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.mode-transition {
-    animation: pulse 0.6s var(--transition-timing);
-} */
 
 #logo-image {
     transition: opacity 0.3s ease-in-out;
