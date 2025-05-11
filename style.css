@@ -3,7 +3,7 @@ body {
     transition:
         background-image var(--transition-duration) var(--transition-timing),
         color var(--transition-duration) var(--transition-timing);
-    height: auto;
+    overflow: hidden;
 }
 
 /* ESTILIZAÇÃO FORMULÁRIO */
@@ -101,12 +101,12 @@ body {
 .form-container {
     width: 100%;
     height: auto;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     background-color: var(--form-color);
     padding: 2rem;
     color: var(--text-color);
-    position: absolute;
-    top: 40%;
+    position: fixed;
+    bottom: 0%;
 }
 
 .title {
@@ -314,7 +314,7 @@ body {
     width: 64px;
     margin-top: 20px;
     margin-right: 20px;
-    right: 0
+    right: 0;
 }
 
 #switch button {
