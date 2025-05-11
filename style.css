@@ -3,7 +3,7 @@ body {
     transition:
         background-image var(--transition-duration) var(--transition-timing),
         color var(--transition-duration) var(--transition-timing);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* ESTILIZAÇÃO FORMULÁRIO */
@@ -105,8 +105,8 @@ body {
     background-color: var(--form-color);
     padding: 2rem;
     color: var(--text-color);
-    position: fixed;
-    bottom: 0%;
+    position: absolute;
+    TOP: 46%;
 }
 
 .title {
