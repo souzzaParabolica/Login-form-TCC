@@ -107,7 +107,7 @@ body {
     padding: 2rem;
     color: var(--text-color);
     position: absolute;
-    bottom: 0%;
+    top: 44%;
 }
 
 .title {
