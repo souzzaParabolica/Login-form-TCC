@@ -1,0 +1,220 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing);
+}
+
+/* variáveis */
+
+:root {
+    --switch-bg-url: url(img/sun.svg);
+    --bg-color: #eaeaea;
+    --itens-color: #fff;
+    --icons-color: #000;
+    --text-color: #000;
+    --subtitle-color: #a6a6a6;
+
+
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --border-switch-color: 2px solid rgba(0, 0, 0, 0.571);
+
+    --arrow-hover: #000;
+    --form-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --switch-bg-url: url(img/moon-stars.svg);
+    --bg-color: #22211F;
+    --itens-color: #333438;
+    --icons-color: #fff;
+    --text-color: #fff;
+    --subtitle-color: #a6a6a6;
+
+
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --border-switch-color: 2px solid rgba(61, 61, 61, 0.5);
+
+    --arrow-hover: #eaeaea;
+    --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark .form-container {
+    box-shadow: var(--form-shadow);
+    border: var(--form-border);
+}
+
+#switch span {
+    transition:
+        background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing),
+        border-color var(--transition-duration) var(--transition-timing);
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.toggle-animation {
+    animation: fadeScale 0.4s ease-in-out;
+}
+
+@keyframes fadeScale {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* SWITCH PARA MODO CLARO E ESCURO */
+
+#switch {
+    z-index: 10;
+    position: fixed;
+    width: 64px;
+    margin-top: 20px;
+    margin-right: 20px;
+    right: 0;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    border: var(--border-switch-color);
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    animation: slide-back .2s;
+
+    transition:
+        left var(--transition-duration) var(--transition-timing),
+        background-image var(--transition-duration) var(--transition-timing),
+        transform var(--transition-duration) var(--transition-timing);
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.dark #switch button {
+    animation: slide-in .3s forwards;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 9999px;
+
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.home {
+    background-image: radial-gradient(#274313, #597731);
+    border-radius: 13px;
+}
+
+.nav-bar svg {
+    padding: 5px;
+}
+
+.icon {
+    color: var(--icons-color);
+}
+
+.item {
+    background-color: var(--itens-color);
+    color: var(--subtitle-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    box-shadow: var(--form-shadow);
+}
+
+.item:hover {
+    border: 1px solid var(--stroke-color);
+
+    .arrows {
+        color: var(--arrow-hover);
+    }
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-weight: bold;
+}
+
+.arrows {
+    color: var(--stroke-color);
+    transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.item-title {
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.fundo {
+    background-color: var(--bg-color);
+}
+
+h2{
+    font-size: 1.5em !important;
+}
