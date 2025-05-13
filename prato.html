@@ -1,0 +1,280 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="prato.css">
+  </head>
+  <body class="font-inter">
+
+     <!-- BOTÃO PARA VOLTAR -->
+     <a href="config.html" onclick="window.location.href='config.html'; return false;">
+     <div class="styled-wrapper">
+      <button class="button">
+        <div class="button-box">
+          <span class="button-elem">
+            <img src="img/arrow.png" alt="" width="15px" />
+          </span>
+          <span class="button-elem">
+            <img src="img/arrow.png" alt="" width="15px" />
+          </span>
+        </div>
+      </button>
+    </div>
+  </a>
+
+    <!-- Tela cheia -->
+   
+      <div id="switch" onclick="toggleMode()">
+          <button></button>
+          <span></span>
+        </div>
+
+      <img class="prato pt-[10%]" src="img/prato.png" alt="">
+
+      <div class="dad flex flex-col gap-5">
+      <div class="item prato-info mx-4 rounded-[20px] px-6 py-4 flex flex-col gap-3">
+        <h2 class="font-bold ">Arroz, feijão e frango</h2>
+        <p class="subtitle flex flex-row gap-2"> <i data-lucide="calendar-clock" class="w-8 h-8"></i>Almoço 21/05/25</p>
+        <p class="subtitle flex flex-row gap-2"><i data-lucide="award" class="w-8 h-8"></i>Avaliação:</p>
+
+        <div class="avaliacao flex flex-row gap-2 justify-center">
+        <img src="img/star-filled.png" alt="" width="30px" />
+        <img src="img/star-filled.png" alt="" width="30px" />
+        <img src="img/star-filled.png" alt="" width="30px" />
+        <img src="img/star-filled.png" alt="" width="30px" />
+        <img src="img/star.png" alt="" width="30px" />
+      </div>
+      </div>
+        
+
+      <div class="item descricao mx-4 rounded-[20px] px-6 py-4 flex flex-col gap-3">
+        <h2 class="font-bold">Descrição</h2>
+        <p class="subtitle">O arroz com frango da Etec de Carapicuíba é o melhor da região, nosso frango é marinado ao molho angolano e temperado com pimen...</p>
+
+        <button class="reservar font-bold">RESERVAR</button>
+      </div>
+
+      <div class="avaliar-prato item mx-4 rounded-[20px] px-6 py-4 flex flex-col gap-3">
+        <h2 class="font-bold">Arroz, feijão e frango</h2>
+        <p class="subtitle flex flex-row gap-2"><i data-lucide="award" class="w-8 h-7"></i>Avalie:</p>
+
+        <div class="rating">
+          <input value="5" name="rating" id="star5" type="radio" />
+          <label title="5 stars" for="star5">
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgOne"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgTwo"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <div class="ombre"></div>
+          </label>
+        
+          <input value="4" name="rating" id="star4" type="radio" />
+          <label title="4 stars" for="star4">
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgOne"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgTwo"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <div class="ombre"></div>
+          </label>
+        
+          <input value="3" name="rating" id="star3" type="radio" />
+          <label title="3 stars" for="star3">
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgOne"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgTwo"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <div class="ombre"></div>
+          </label>
+        
+          <input value="2" name="rating" id="star2" type="radio" />
+          <label title="2 stars" for="star2">
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgOne"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgTwo"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <div class="ombre"></div>
+          </label>
+        
+          <input value="1" name="rating" id="star1" type="radio" />
+          <label title="1 star" for="star1">
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgOne"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <svg
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="35"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svgTwo"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+            <div class="ombre"></div>
+          </label>
+        </div>
+        
+
+      </div>
+    </div>
+
+      <!-- Bottom nav fixo -->
+      <div class="item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl">
+        <i data-lucide="calendar-days" class="icon w-10 h-10 cursor-pointer"></i>
+        <i data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></i>
+        <a
+          href="index.html"
+          onclick="window.location.href='index.html'; return false;"
+        >
+          <i
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></i>
+        </a>
+        <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
+        <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
+      </div>
+    </div>
+
+<script src="pratotoggle.js"></script>
+  <script>
+      lucide.createIcons();
+    </script>
+  </body>
+  </html>

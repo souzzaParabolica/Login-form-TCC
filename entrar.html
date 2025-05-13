@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="img/VIVAICON.jfif" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="entrar.css" />
     <title>Document</title>
     <style>
       .header-image {
@@ -32,17 +32,22 @@
     </div>
 
     <!-- BOTÃO PARA VOLTAR -->
+  
     <div class="styled-wrapper">
-      <button class="button">
-        <div class="button-box">
-          <span class="button-elem">
-            <img src="img/arrow.png" alt="" width="15px" />
-          </span>
-          <span class="button-elem">
-            <img src="img/arrow.png" alt="" width="15px" />
-          </span>
-        </div>
-      </button>
+      <a
+        href="index.html"
+        onclick="window.location.href='index.html'; return false;"
+      >
+        <button class="button">
+          <div class="button-box">
+            <span class="button-elem">
+              <img src="img/arrow.png" alt="" width="15px" />
+            </span>
+            <span class="button-elem">
+              <img src="img/arrow.png" alt="" width="15px" />
+            </span>
+          </div></button
+      ></a>
     </div>
 
     <!-- IMAGEM DE CABEÇALHO -->
@@ -56,18 +61,8 @@
     <!-- FORMULÁRIO DE LOGIN -->
     <div class="dad-form">
       <div class="form-container rounded-t-[25px]">
-        <p class="title cursor-default">Criar conta</p>
+        <p class="title">Entrar</p>
         <form class="form">
-          <div class="input-group">
-            <label for="username">Nome Completo</label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Neymar Júnior"
-              required
-            />
-          </div>
           <div class="input-group">
             <label for="username">Email Institucional</label>
             <input
@@ -75,16 +70,6 @@
               name="email"
               id="email"
               placeholder="njsilva@gmail.com"
-              required
-            />
-          </div>
-          <div class="input-group">
-            <label for="username">Número de Matrícula</label>
-            <input
-              type="number"
-              name="username"
-              id="username"
-              placeholder="10101"
               required
             />
           </div>
@@ -107,7 +92,7 @@
             </div>
           </div>
           <a
-            href="login.html"
+            href="config.html"
             onclick="window.location.href='config.html'; return false;"
           >
             <button class="sign">Cadastrar</button>
@@ -116,13 +101,13 @@
         <div class="social-message">
           <div class="line"></div>
           <p class="message">
-            <span class="cursor-default"> Já tem uma conta?</span>
+            Não possui uma conta?
             <a
-              href="entrar.html"
-              onclick="window.location.href='entrar.html'; return false;"
-            >
-              <span class="font-bold text-[#597731] underline">Entrar</span>
-            </a>
+              href="index.html"
+              onclick="window.location.href='index.html'; return false;"
+              ><span class="font-bold text-[#597731] underline"
+                >Cadastre-se</span
+              ></a
             >
           </p>
           <div class="line"></div>
@@ -130,6 +115,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="toggle.js"></script>
   </body>
 </html>

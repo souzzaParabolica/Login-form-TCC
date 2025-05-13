@@ -1,5 +1,5 @@
-  <!DOCTYPE html>
-  <html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,17 +7,19 @@
     <title>Configurações</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="config.css">
+    <link rel="stylesheet" href="config.css" />
   </head>
   <body class="font-inter">
-
     <!-- Tela cheia -->
     <div class="fundo flex flex-col h-screen w-screen">
-    <div class="header flex flex-row justify-between"> <h2 class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2 p-4">
-        <i data-lucide="settings" class="w-8 h-8"></i>
-        Configurações:
-      </h2>
-      <div id="switch" onclick="toggleMode()">
+      <div class="header flex flex-row justify-between">
+        <h2
+          class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2 p-4"
+        >
+          <i data-lucide="settings" class="w-8 h-8"></i>
+          Configurações:
+        </h2>
+        <div id="switch" onclick="toggleMode()">
           <button></button>
           <span></span>
         </div>
@@ -25,56 +27,76 @@
 
       <div class="flex-1 space-y-3 overflow-y-auto px-4">
         <!-- Itens -->
-        <div class="item flex justify-between items-center p-3 rounded-lg cursor-pointer">
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
           <div class="flex items-center gap-3">
             <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
             <div>
               <p class="item-title font-semibold">Aparência</p>
-              <p class="subtitle text-sm text-zinc-300">Controle a forma que você vê o site</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Controle a forma que você vê o site
+              </p>
             </div>
           </div>
           <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
 
-        <div class="item flex justify-between items-center p-3 rounded-lg cursor-pointer">
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
           <div class="flex items-center gap-3">
             <i data-lucide="user" class="w-8 h-8"></i>
             <div>
               <p class="item-title font-semibold">Sua conta</p>
-              <p class="subtitle text-sm text-zinc-300">Gerencie suas informações na plataforma</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Gerencie suas informações na plataforma
+              </p>
             </div>
           </div>
           <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
 
-        <div class="item flex justify-between items-center p-3 rounded-lg cursor-pointer">
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
           <div class="flex items-center gap-3">
             <i data-lucide="folder-open" class="w-8 h-8"></i>
             <div>
               <p class="item-title font-semibold">Privacidade e dados</p>
-              <p class="subtitle text-sm text-zinc-300">Gerencie seus dados armazenados</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Gerencie seus dados armazenados
+              </p>
             </div>
           </div>
           <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
 
-        <div class="item flex justify-between items-center p-3 rounded-lg cursor-pointer">
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
           <div class="flex items-center gap-3">
             <i data-lucide="podcast" class="w-8 h-8"></i>
             <div>
               <p class="item-title font-semibold">Suporte</p>
-              <p class="subtitle text-sm text-zinc-300">Entre em contato conosco</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Entre em contato conosco
+              </p>
             </div>
           </div>
           <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
 
-        <div class="item last flex justify-between items-center p-3 rounded-lg cursor-pointer">
+        <div
+          class="item last flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
           <div class="flex items-center gap-3">
             <i data-lucide="info" class="w-8 h-8"></i>
             <div>
               <p class="item-title font-semibold">Sobre</p>
-              <p class="subtitle text-sm text-zinc-300">Descubra mais sobre nosso projeto</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Descubra mais sobre nosso projeto
+              </p>
             </div>
           </div>
           <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
@@ -82,20 +104,37 @@
       </div>
 
       <!-- Bottom nav fixo -->
-      <div class="item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl">
-        <i data-lucide="calendar-days" class="icon w-10 h-10 cursor-pointer"></i>
+      <div
+        class="item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl"
+      >
+        <a
+          href="prato.html"
+          onclick="window.location.href='prato.html'; return false;"
+        >
+          <i
+            data-lucide="calendar-days"
+            class="icon w-10 h-10 cursor-pointer"
+          ></i>
+        </a>
         <i data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></i>
-        <a href="login.html" onclick="window.location.href='index.html'; return false;">
-          <i data-lucide="home" class="home w-10 h-10 text-white cursor-pointer"></i> </a>
+        <a
+          href="index.html"
+          onclick="window.location.href='index.html'; return false;"
+        >
+          <i
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></i>
+        </a>
         <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
         <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
       </div>
     </div>
-    <img src="" alt="">
+    <img src="" alt="" />
 
     <script src="configtoggle.js"></script>
     <script>
       lucide.createIcons();
     </script>
   </body>
-  </html>
+</html>

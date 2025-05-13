@@ -1,0 +1,454 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing);
+}
+
+/* variáveis */
+
+:root {
+    --switch-bg-url: url(img/sun.svg);
+    --bg-color: #eaeaea;
+    --itens-color: #fff;
+    --icons-color: #000;
+    --text-color: #000;
+    --subtitle-color: #a6a6a6;
+    --back-button-color: #f5f5f5;
+    --button-color: linear-gradient(135deg, #4a7b29, #6c8f3e);
+    --border-button-color: 1px solid black;
+    --shadow-image: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2));
+
+
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --border-switch-color: 2px solid rgba(0, 0, 0, 0.571);
+
+    --arrow-hover: #000;
+    --form-shadow: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+.dark {
+    --switch-bg-url: url(img/moon-stars.svg);
+    --bg-color: #22211F;
+    --back-button-color: #333438;
+    --itens-color: #333438;
+    --icons-color: #fff;
+    --text-color: #fff;
+    --subtitle-color: #a6a6a6;
+    --border-button-color: 1px solid #a6a6a6;
+    --shadow-image: drop-shadow(0px 8px 20px rgba(255, 255, 255, 0.08));
+
+
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --border-switch-color: 2px solid rgba(61, 61, 61, 0.5);
+
+    --arrow-hover: #eaeaea;
+    --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark .form-container {
+    box-shadow: var(--form-shadow);
+    border: var(--form-border);
+}
+
+#switch span {
+    transition:
+        background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing),
+        border-color var(--transition-duration) var(--transition-timing);
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.toggle-animation {
+    animation: fadeScale 0.4s ease-in-out;
+}
+
+@keyframes fadeScale {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* SWITCH PARA MODO CLARO E ESCURO */
+
+#switch {
+    z-index: 10;
+    position: fixed;
+    width: 64px;
+    margin-top: 20px;
+    margin-right: 20px;
+    right: 0;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    border: var(--border-switch-color);
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    animation: slide-back .2s;
+
+    transition:
+        left var(--transition-duration) var(--transition-timing),
+        background-image var(--transition-duration) var(--transition-timing),
+        transform var(--transition-duration) var(--transition-timing);
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.dark #switch button {
+    animation: slide-in .3s forwards;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 9999px;
+
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.home {
+    background-image: radial-gradient(#274313, #597731);
+    border-radius: 13px;
+}
+
+.nav-bar svg {
+    padding: 5px;
+}
+
+.icon {
+    color: var(--icons-color);
+}
+
+.item {
+    background-color: var(--itens-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    box-shadow: var(--form-shadow);
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-size: 1.1em;
+    
+}
+
+.arrows {
+    color: var(--stroke-color);
+    transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.item-title {
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.fundo {
+    background-color: var(--bg-color);
+}
+
+.prato{
+    filter: var(--shadow-image);
+    margin: 0 auto;
+}
+
+.reservar{
+    background: var(--button-color);
+    border-radius: 14px;
+    height: 50px;
+    margin-top: 15px;
+    color: white !important;
+    font-size: 1.4em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.reservar:hover{
+    border: var(--border-button-color);
+    transform: translateY(-2px);
+}
+
+.reservar:active{
+    transform: scale(0.95);
+    transform: translateY(2px);
+}
+
+.avaliacao{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 1.5em !important;
+}
+
+/* ESTILIZAÇÃO DO BOTÃO PARA VOLTAR */
+
+
+
+.styled-wrapper .button {
+    z-index: 10;
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.styled-wrapper .button:before {
+    content: "";
+    background-color: var(--back-button-color);
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+    border: 2px solid var(--back-button-color);
+    transition:
+        opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+    border: 2px solid #599a53;
+    transform: scale(1.3);
+    transition:
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+}
+
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+    display: flex;
+    position: absolute;
+    top: -11px;
+    left: -7px;
+}
+
+.styled-wrapper .button-elem {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 24px 18px 0 22px;
+    transform: rotate(360deg);
+    fill: #f0eeef;
+}
+
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-69px);
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    justify-content: center;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label .svgOne {
+    stroke: #ccc;
+    fill: rgba(0, 0, 0, 0);
+    transition:
+        stroke 0.5s ease,
+        fill 0.5s ease;
+}
+
+.rating label .svgTwo {
+    position: absolute;
+    top: -1px;
+    fill: gold;
+    stroke: rgba(255, 217, 0, 0);
+    opacity: 0;
+    transition:
+        stroke 0.5s ease,
+        fill 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.rating label {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.5s ease;
+}
+
+/* Étoiles sélectionnées ou survolées */
+.rating label:hover .svgOne,
+.rating label:hover~label .svgOne {
+    stroke: gold;
+}
+
+.rating input:checked~label .svgOne {
+    stroke: #cccccc00;
+}
+
+.rating input:checked~label .svgTwo {
+    transform: rotateX(0deg) rotateY(0deg) translateY(0px);
+    opacity: 1;
+    animation: displayStar 0.5s cubic-bezier(0.75, 0.41, 0.82, 1.2);
+}
+
+@keyframes displayStar {
+    0% {
+        transform: rotateX(100deg) rotateY(100deg) translateY(10px);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(0px);
+    }
+}
+
+.ombre {
+    background: radial-gradient(ellipse closest-side,
+            rgba(0, 0, 0, 0.24),
+            rgba(0, 0, 0, 0));
+    width: 30px;
+    height: 8px;
+    opacity: 0;
+    transition: opacity 0.6s ease 0.2s;
+}
+
+/* Étoiles sélectionnées ou survolées */
+.rating label:hover .ombre,
+.rating label:hover~label .ombre {
+    opacity: 0.3;
+}
+
+.rating input:checked~label .ombre {
+    opacity: 1;
+}
+
+/* Animation de secousse uniquement au hover */
+.rating label:hover .svgTwo:hover {
+    animation:
+        chackStar 0.6s ease-out,
+        displayStar none 1s;
+}
+
+@keyframes chackStar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    80% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
