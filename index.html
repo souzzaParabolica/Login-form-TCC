@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>// Verifica se o usuário prefere tema escuro
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+      }
+      
+      // Opcional: Monitorar mudanças na preferência do usuário
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+          if (event.matches) {
+              document.documentElement.classList.add('dark');
+          } else {
+              document.documentElement.classList.remove('dark');
+          }
+      });</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8" />
     <link rel="icon" href="img/VIVAICON.jfif" />
