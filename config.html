@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <script>// Verifica se o usuário prefere tema escuro
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
+    <script>
+      // Verifica se o usuário prefere tema escuro
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
       }
-      
-      // Opcional: Monitorar mudanças na preferência do usuário
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-          if (event.matches) {
-              document.documentElement.classList.add('dark');
-          } else {
-              document.documentElement.classList.remove('dark');
-          }
-      });</script>
-      <!-- GSAP core -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- ScrollTrigger plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      // Opcional: Monitorar mudanças na preferência do usuário
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        });
+    </script>
+    <!-- GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +42,7 @@
         <h1
           class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2 p-4"
         >
-          <i data-lucide="settings" class="w-8 h-8"></i>
+          <span data-lucide="settings" class="w-8 h-8"></span>
           Configurações:
         </h1>
         <div id="switch" onclick="toggleMode()">
@@ -44,93 +51,93 @@
         </div>
       </div>
 
-      <div class=" space-y-3 overflow-y-auto px-4">
+      <div class="space-y-3 overflow-y-auto px-4">
         <!-- Itens -->
         <a
-        href="aparencia.html"
-        onclick="window.location.href='aparencia.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          href="aparencia.html"
+          onclick="window.location.href='aparencia.html'; return false;"
         >
-          <div class="flex items-center gap-3">
-            <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Aparência</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Controle a forma que você vê o site
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="sliders-horizontal" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Aparência</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Controle a forma que você vê o site
+                </p>
+              </div>
             </div>
+            <span data-lucide="arrow-right" class="arrows w-4 h-4"></span>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
         </a>
 
         <a
-        href="conta.html"
-        onclick="window.location.href='conta.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          href="conta.html"
+          onclick="window.location.href='conta.html'; return false;"
         >
-          <div class="flex items-center gap-3">
-            <i data-lucide="user" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Sua conta</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Gerencie suas informações na plataforma
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="user" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Sua conta</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Gerencie suas informações na plataforma
+                </p>
+              </div>
             </div>
+            <span data-lucide="arrow-right" class="arrows w-4 h-4"></span>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
         </a>
 
         <a
-        href="dados.html"
-        onclick="window.location.href='dados.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          href="dados.html"
+          onclick="window.location.href='dados.html'; return false;"
         >
-          <div class="flex items-center gap-3">
-            <i data-lucide="folder-open" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Privacidade e dados</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Gerencie seus dados armazenados
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="folder-open" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Privacidade e dados</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Gerencie seus dados armazenados
+                </p>
+              </div>
             </div>
+            <span data-lucide="arrow-right" class="arrows w-4 h-4"></span>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
         </a>
 
         <a
-        href="suporte.html"
-        onclick="window.location.href='suporte.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          href="suporte.html"
+          onclick="window.location.href='suporte.html'; return false;"
         >
-          <div class="flex items-center gap-3">
-            <i data-lucide="podcast" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Suporte</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Entre em contato conosco
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="podcast" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Suporte</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Entre em contato conosco
+                </p>
+              </div>
             </div>
+            <span data-lucide="arrow-right" class="arrows w-4 h-4"></span>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
         </a>
 
         <div
           class="item last flex justify-between items-center p-3 rounded-lg cursor-pointer"
         >
           <div class="flex items-center gap-3">
-            <i data-lucide="info" class="w-8 h-8"></i>
+            <span data-lucide="info" class="w-8 h-8"></span>
             <div>
               <p class="item-title font-semibold">Sobre</p>
               <p class="subtitle text-sm text-zinc-300">
@@ -138,7 +145,7 @@
               </p>
             </div>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
+          <span data-lucide="arrow-right" class="arrows w-4 h-4"></span>
         </div>
       </div>
 
@@ -150,23 +157,23 @@
           href="prato.html"
           onclick="window.location.href='prato.html'; return false;"
         >
-          <i
+          <span
             data-lucide="calendar-days"
             class="icon w-10 h-10 cursor-pointer"
-          ></i>
+          ></span>
         </a>
-        <i data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></i>
+        <span data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></span>
         <a
           href="index.html"
           onclick="window.location.href='index.html'; return false;"
         >
-          <i
+          <span
             data-lucide="home"
             class="home w-10 h-10 text-white cursor-pointer"
-          ></i>
+          ></span>
         </a>
-        <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
-        <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
+        <span data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></span>
+        <span data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></span>
       </div>
     </div>
     <img src="" alt="" />
