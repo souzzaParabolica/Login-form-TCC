@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <script>
+      // Verifica se o usuário prefere tema escuro
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Opcional: Monitorar mudanças na preferência do usuário
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dados.css" />
+  </head>
+  <body class="font-inter">
+    <!-- Tela cheia -->
+    <div class="fundo flex flex-col h-50 w-screen">
+      <div class="header flex flex-col justify-between p-4">
+        <h1
+          class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2"
+        >
+          <i data-lucide="settings" class="w-8 h-8"></i>
+          Configurações:
+        </h1>
+        <h2 class="subtitulo font-bold">Sua conta / Dados</h2>
+        <div id="switch" onclick="toggleMode()">
+          <button></button>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="space-y-3 overflow-y-auto px-4">
+        <!-- Itens -->
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="item-title font-semibold">Nome:</p>
+              <div class="subtitle text-sm text-zinc-300">
+                <span id="name-display">Neymar Junior</span>
+                <input
+                  type="text"
+                  id="name-input"
+                  value="Neymar Junior"
+                  class="hidden bg-transparent border-b border-white outline-none"
+                />
+              </div>
+            </div>
+          </div>
+          <i data-lucide="pencil" class="arrows w-4 h-4" id="edit-name"></i>
+        </div>
+
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="item-title font-semibold">E-Mail:</p>
+              <p class="subtitle text-sm text-zinc-300">njr@etec.sp.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item flex justify-between items-center p-3 rounded-lg cursor-pointer">
+          <div class="flex items-center gap-3">
+            <div class="w-full">
+              <p class="item-title font-semibold">Senha:</p>
+              <div class="subtitle text-sm text-zinc-300">
+                <span id="password-display">••••••••</span>
+                <input 
+                  type="password" 
+                  id="password-input" 
+                  value="" 
+                  class="hidden bg-transparent border-b border-white outline-none w-full"
+                  placeholder="  Mínimo 8 caracteres"
+                >
+              </div>
+              <p id="password-error" class="text-red-500 text-xs mt-1 hidden">A senha deve ter no mínimo 8 caracteres</p>
+            </div>
+          </div>
+          <i data-lucide="pencil" class="arrows w-4 h-4" id="edit-password"></i>
+        </div>
+
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="item-title font-semibold">Número de matrícula</p>
+              <p class="subtitle text-sm text-zinc-300">69696</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom nav fixo -->
+      <div
+        class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl"
+      >
+        <a
+          href="prato.html"
+          onclick="window.location.href='prato.html'; return false;"
+        >
+          <i
+            data-lucide="calendar-days"
+            class="icon w-10 h-10 cursor-pointer"
+          ></i>
+        </a>
+        <i data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></i>
+        <a
+          href="index.html"
+          onclick="window.location.href='index.html'; return false;"
+        >
+          <i
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></i>
+        </a>
+        <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
+        
+        <a
+        href="config.html"
+        onclick="window.location.href='config.html'; return false;"
+      >
+        <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
+        </a>
+      </div>
+    </div>
+    <img src="" alt="" />
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      const editButton = document.getElementById('edit-password');
+      const passwordDisplay = document.getElementById('password-display');
+      const passwordInput = document.getElementById('password-input');
+      const passwordError = document.getElementById('password-error');
+    
+      editButton.addEventListener('click', function() {
+        // Se já estiver editando, cancelar a edição
+        if (!passwordDisplay.classList.contains('hidden')) {
+          passwordDisplay.classList.add('hidden');
+          passwordInput.classList.remove('hidden');
+          passwordInput.value = '';
+          passwordInput.focus();
+          passwordError.classList.add('hidden');
+        }
+      });
+    
+      // Função para validar a senha
+      function validatePassword() {
+        if (passwordInput.value.length < 8 && passwordInput.value.length > 0) {
+          passwordError.classList.remove('hidden');
+          return false;
+        }
+        passwordError.classList.add('hidden');
+        return true;
+      }
+    
+      // Validar durante a digitação (opcional)
+      passwordInput.addEventListener('input', validatePassword);
+    
+      // Salvar quando pressionar Enter
+      passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          if (validatePassword() && passwordInput.value.length >= 8) {
+            passwordDisplay.textContent = '•'.repeat(passwordInput.value.length);
+            passwordDisplay.classList.remove('hidden');
+            passwordInput.classList.add('hidden');
+          }
+        }
+      });
+    
+      // Salvar quando o input perder o foco
+      passwordInput.addEventListener('blur', function() {
+        if (passwordInput.value.length >= 8) {
+          passwordDisplay.textContent = '•'.repeat(passwordInput.value.length);
+          passwordDisplay.classList.remove('hidden');
+          passwordInput.classList.add('hidden');
+        } else if (passwordInput.value.length > 0) {
+          // Mostra erro se tiver digitado algo mas não atingiu 8 caracteres
+          passwordError.classList.remove('hidden');
+          passwordInput.focus(); // Mantém o foco no campo
+        } else {
+          // Se estiver vazio, volta para o estado inicial
+          passwordDisplay.classList.remove('hidden');
+          passwordInput.classList.add('hidden');
+        }
+      });
+    });</script>
+
+    <script src="dados.js"></script>
+    <script src="dadostoggle.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <script>
+      // Verifica se o usuário prefere tema escuro
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Opcional: Monitorar mudanças na preferência do usuário
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="privacidade.css" />
+  </head>
+  <body class="font-inter">
+    <!-- Tela cheia -->
+    <div class="fundo flex flex-col h-50 w-screen">
+      <div class="header flex flex-col justify-between p-4">
+        <h1
+          class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2"
+        >
+          <i data-lucide="settings" class="w-8 h-8"></i>
+          Configurações:
+        </h1>
+        <h2 class="subtitulo font-bold">Privacidade e dados</h2>
+        <div id="switch" onclick="toggleMode()">
+          <button></button>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="space-y-3 overflow-y-auto px-4">
+        <!-- Itens -->
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <img class="w-8 h-8" src="img/Privacidade.png" alt="" />
+            <div>
+              <p class="item-title font-semibold">Privacidade na plataforma</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Veja como tratamos seus dados no site
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <img class="w-8 h-8" src="img/Limpar.png" alt="" />
+            <div>
+              <p class="item-title font-semibold">Limpar cache</p>
+              <p class="subtitle text-sm text-zinc-300">
+                Excluiremos seus dados não essenciais
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom nav fixo -->
+      <div
+        class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl"
+      >
+        <a
+          href="prato.html"
+          onclick="window.location.href='prato.html'; return false;"
+        >
+          <i
+            data-lucide="calendar-days"
+            class="icon w-10 h-10 cursor-pointer"
+          ></i>
+        </a>
+        <i data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></i>
+        <a
+          href="index.html"
+          onclick="window.location.href='index.html'; return false;"
+        >
+          <i
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></i>
+        </a>
+        <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
+        
+        <a
+        href="config.html"
+        onclick="window.location.href='config.html'; return false;"
+      >
+        <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
+        </a>
+      </div>
+    </div>
+    <img src="" alt="" />
+
+    <script src="privacidadetoggle.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

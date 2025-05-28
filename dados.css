@@ -5,7 +5,33 @@ body {
         color var(--transition-duration) var(--transition-timing);
 }
 
+/* Adicione isso ao seu arquivo CSS se necessário */
+.hidden {
+    display: none; }
+
 /* variáveis */
+
+/* Estilo para o input de senha */
+#password-input {
+    color: #d1d5db;
+    /* Cor similar ao texto zinc-300 */
+    padding: 0.25rem 0;
+}
+
+/* Garantir que o input ocupe todo o espaço disponível */
+.subtitle {
+    position: relative;
+    min-height: 1.25rem;
+    /* Altura aproximada de uma linha de texto */
+}
+
+/* Estilo para input inválido */
+input:invalid {
+    border-color: #ef4444;
+    /* vermelho-500 */ }
+
+.hidden {
+    display: none; }
 
 :root {
     --switch-bg-url: url(img/sun.svg);
@@ -173,6 +199,9 @@ body {
     padding: 5px;
 }
 
+.subtitulo{
+    color: var(--subtitle-color);
+}
 .icon {
     color: var(--icons-color);
 }
@@ -181,8 +210,6 @@ body {
     background-color: var(--itens-color);
     color: var(--subtitle-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
 }
 
 .menu {
@@ -215,8 +242,4 @@ body {
 
 .fundo {
     background-color: var(--bg-color);
-}
-
-h2{
-    font-size: 1.5em !important;
 }

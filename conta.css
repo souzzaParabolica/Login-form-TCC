@@ -173,6 +173,9 @@ body {
     padding: 5px;
 }
 
+.subtitulo{
+    color: var(--subtitle-color);
+}
 .icon {
     color: var(--icons-color);
 }
@@ -181,8 +184,6 @@ body {
     background-color: var(--itens-color);
     color: var(--subtitle-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
 }
 
 .menu {
@@ -215,8 +216,4 @@ body {
 
 .fundo {
     background-color: var(--bg-color);
-}
-
-h2{
-    font-size: 1.5em !important;
 }

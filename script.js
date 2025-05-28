@@ -11,7 +11,7 @@ function toggleMode() {
 
     // Alterna a imagem
     if (html.classList.contains("dark")) {
-      logoImage.src = "img/LOGOBRANCA.png";
+      logoImage.src = "img/VIVAICON-removebg-preview.png";
     } else {
       logoImage.src = "img/VIVAICON-removebg-preview.png";
     }

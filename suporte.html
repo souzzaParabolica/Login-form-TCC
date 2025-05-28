@@ -20,119 +20,51 @@
     <title>Configurações</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="config.css" />
+    <link rel="stylesheet" href="suporte.css" />
   </head>
   <body class="font-inter">
     <!-- Tela cheia -->
     <div class="fundo flex flex-col h-50 w-screen">
-      <div class="header flex flex-row justify-between">
-        <h2
-          class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2 p-4"
+      <div class="header flex flex-col justify-between p-4">
+        <h1
+          class="font-bold icon text-lg font-bold mb-4 flex items-center gap-2"
         >
           <i data-lucide="settings" class="w-8 h-8"></i>
           Configurações:
-        </h2>
+        </h1>
+        <h2 class="subtitulo font-bold">Suporte</h2>
         <div id="switch" onclick="toggleMode()">
           <button></button>
           <span></span>
         </div>
       </div>
 
-      <div class=" space-y-3 overflow-y-auto px-4">
+      <div class="space-y-3 overflow-y-auto px-4">
         <!-- Itens -->
-        <a
-        href="aparencia.html"
-        onclick="window.location.href='aparencia.html'; return false;"
-      >
         <div
           class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
         >
           <div class="flex items-center gap-3">
-            <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
             <div>
-              <p class="item-title font-semibold">Aparência</p>
+              <p class="item-title font-semibold">E-Mail para contato</p>
               <p class="subtitle text-sm text-zinc-300">
-                Controle a forma que você vê o site
+                contato@viva.com
               </p>
             </div>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
-        </a>
 
-        <a
-        href="conta.html"
-        onclick="window.location.href='conta.html'; return false;"
-      >
         <div
           class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
         >
           <div class="flex items-center gap-3">
-            <i data-lucide="user" class="w-8 h-8"></i>
             <div>
-              <p class="item-title font-semibold">Sua conta</p>
+              <p class="item-title font-semibold">Telefone para contato</p>
               <p class="subtitle text-sm text-zinc-300">
-                Gerencie suas informações na plataforma
+                +55 (11) 4090-1050
               </p>
             </div>
           </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
-        </a>
-
-        <a
-        href="dados.html"
-        onclick="window.location.href='dados.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <i data-lucide="folder-open" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Privacidade e dados</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Gerencie seus dados armazenados
-              </p>
-            </div>
-          </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
-        </a>
-
-        <a
-        href="suporte.html"
-        onclick="window.location.href='suporte.html'; return false;"
-      >
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <i data-lucide="podcast" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Suporte</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Entre em contato conosco
-              </p>
-            </div>
-          </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
-        </div>
-        </a>
-
-        <div
-          class="item last flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <i data-lucide="info" class="w-8 h-8"></i>
-            <div>
-              <p class="item-title font-semibold">Sobre</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Descubra mais sobre nosso projeto
-              </p>
-            </div>
-          </div>
-          <i data-lucide="arrow-right" class="arrows w-4 h-4"></i>
         </div>
       </div>
 
@@ -160,12 +92,18 @@
           ></i>
         </a>
         <i data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></i>
+        
+        <a
+        href="config.html"
+        onclick="window.location.href='config.html'; return false;"
+      >
         <i data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></i>
+        </a>
       </div>
     </div>
     <img src="" alt="" />
 
-    <script src="configtoggle.js"></script>
+    <script src="suportetoggle.js"></script>
     <script>
       lucide.createIcons();
     </script>
