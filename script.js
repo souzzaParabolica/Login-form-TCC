@@ -1,6 +1,7 @@
 function toggleMode() {
   const html = document.documentElement;
   const logoImage = document.getElementById("logo-image");
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   // Inicia transição
   logoImage.classList.add("logo-transition");
@@ -9,18 +10,20 @@ function toggleMode() {
   setTimeout(() => {
     html.classList.toggle("dark");
 
-    // Alterna a imagem
+    // Alterna a imagem e theme-color
     if (html.classList.contains("dark")) {
       logoImage.src = "img/VIVAICON-removebg-preview.png";
+      themeColorMeta.content = "#121212";
     } else {
       logoImage.src = "img/VIVAICON-removebg-preview.png";
+      themeColorMeta.content = "#f0eeef";
     }
 
     // Remove a classe de transição após a troca
     setTimeout(() => {
       logoImage.classList.remove("logo-transition");
     }, 10);
-  }, 100); // Tempo deve corresponder à duração da transição CSS
+  }, 100);
 
   // Atualiza o botão do switch
   const switchButton = document.querySelector("#switch button");
@@ -31,14 +34,28 @@ function toggleMode() {
 
 // Inicialização
 document.addEventListener("DOMContentLoaded", function () {
+  // Verifica preferência salva ou do sistema
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+  const html = document.documentElement;
+
+  // Aplica tema inicial
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    html.classList.add("dark");
+    document.querySelector('meta[name="theme-color"]').content = "#121212";
+  } else {
+    document.querySelector('meta[name="theme-color"]').content = "#f0eeef";
+  }
+
+  // Configura o botão do switch
   const switchButton = document.querySelector("#switch button");
   if (!switchButton.style.backgroundImage) {
-    switchButton.style.backgroundImage = "url('img/sun.svg')";
+    switchButton.style.backgroundImage = html.classList.contains("dark")
+      ? "url('img/sun.svg')"
+      : "url('img/moon-stars.svg')";
   }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Timeline principal
+  // Timeline principal (seu código GSAP original permanece igual)
   const tl = gsap.timeline({
     defaults: {
       duration: 0.6,
