@@ -299,5 +299,29 @@
   <script>
       lucide.createIcons();
     </script>
+    <!-- Modal de Confirmação -->
+    <div id="reservaModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+      <div class="modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
+        <div class="text-center">
+          <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
+          <p class="mb-4 textmodal">Você está efetuando uma reserva para o dia: <span id="dataReserva">04/04/2025</span></p>
+          
+          <div class="medalbuttons flex justify-center mt-6">
+            <div class="borda w-[50%]">
+            <button id="cancelarReserva" class="px-4 py-2 rounded-lg font-medium transition-colors">
+              Cancelar
+            </button>
+           </div>  
+           <div class="w-[50%]">       
+            <button id="confirmarReserva" class="px-4 py-2 text-[#658b3a] rounded-lg font-medium transition-colors">
+              Reservar
+            </button>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  
   </html>
