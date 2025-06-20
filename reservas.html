@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <script>
+      // Verifica se o usuário prefere tema escuro
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Opcional: Monitorar mudanças na preferência do usuário
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        });
+    </script>
+    <!-- GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css" />
+  </head>
+  <body class="font-inter">
+    <!-- Tela cheia -->
+    <div class="fundo flex flex-col h-50 w-screen">
+      <div class="header flex flex-col justify-between gap-2">
+        <h1 class="font-bold icon text-xl flex items-center gap-2 px-4 pt-4">
+          <span
+            data-lucide="list-checks"
+            class="icon w-8 h-8 cursor-pointer"
+          ></span>
+          Suas reservas:
+        </h1>
+        <h2 class="icon text-lg flex items-center px-4">Abril:</h2>
+
+        <p class="subtitle px-4">02 de abril</p>
+
+        <div id="switch" onclick="toggleMode()">
+          <button></button>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="space-y-3 overflow-y-auto px-4 relative pb-24">
+        <!-- Itens -->
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Almoço) Arroz, feijão e frango grelhado com legumes ao vapor
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+
+        <!-- Prato2 -->
+
+        <div
+          class="item prato2 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Café) Ovo cozido temperado
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+
+        <!-- Prato3 -->
+
+        <div
+          class="item prato3 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+            class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+          >
+        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Janta) Strogonoff de frango
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+
+        <p class="subtitle"> 03 de Abril</p>
+
+        <!-- Prato4 -->
+
+        <div
+          class="item prato4 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+            class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+          >
+        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>\
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Café) Bolacha e achocolatado
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+
+        <!-- Prato5 -->
+
+        <div class="item prato5 flex items-center p-3 rounded-md shadow mx-auto">
+          <!-- Imagem -->
+          <div
+            class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+          >
+        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Almoço) Arroz, feijão preto e frango
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+
+        <!-- Prato6 -->
+
+        <div
+          class="item prato6 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+            class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+          >
+        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <p class="truncate item-title">
+              (Janta) Strogonoff de frango
+            </p>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Lixeira -->
+          <button class="ml-3 text-gray-400 hover:text-red-500">
+            <span class="w-4 h-4" data-lucide="trash-2"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom nav fixo -->
+      <div
+        class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 mb-0 p-2 rounded-t-xl"
+      >
+        <a
+          href="prato.html"
+          onclick="window.location.href='prato.html'; return false;"
+        >
+          <span
+            data-lucide="calendar-days"
+            class="icon w-10 h-10 cursor-pointer"
+          ></span>
+        </a>
+        <span
+          data-lucide="list-checks"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+        <a
+          href="index.html"
+          onclick="window.location.href='index.html'; return false;"
+        >
+          <span
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></span>
+        </a>
+        <span
+          data-lucide="activity"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+        <span
+          data-lucide="settings"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+      </div>
+    </div>
+    <img src="" alt="" />
+    <script src="config.js"></script>
+    <script src="configtoggle.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

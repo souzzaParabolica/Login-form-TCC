@@ -29,7 +29,17 @@ tl.from(".prato-info", {
       opacity: 0,
     },
     "-=0.2"
-  ); // Começa 0.2s após o início da anterior
+  )
+  .from(
+    ".aviso",
+    {
+      y: 30,
+      opacity: 0,
+    },
+    "-=0.2"
+  ); // Começa 0.2s após o início da
+  
+
 
 
   document.addEventListener("DOMContentLoaded", function () {
