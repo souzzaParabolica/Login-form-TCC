@@ -33,22 +33,19 @@
     <title>Configurações</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="config.css" />
+    <link rel="stylesheet" href="avaliacoes.css" />
   </head>
   <body class="font-inter">
     <!-- Tela cheia -->
     <div class="fundo flex flex-col h-50 w-screen">
       <div class="header flex flex-col justify-between gap-2">
-        <h1 class="font-bold icon text-xl flex items-center gap-2 px-4 pt-4">
+        <h1 class="font-bold icon text-xl flex items-center gap-2 px-4 py-4">
           <span
-            data-lucide="list-checks"
+            data-lucide="activity"
             class="icon w-8 h-8 cursor-pointer"
           ></span>
-          Suas reservas:
+          Suas avaliações:
         </h1>
-        <h2 class="icon text-lg flex items-center px-4">Abril:</h2>
-
-        <p class="subtitle px-4">02 de abril</p>
 
         <div id="switch" onclick="toggleMode()">
           <button></button>
@@ -69,23 +66,26 @@
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
             <p class="truncate item-title">
-              (Almoço) Arroz, feijão e frango grelhado com legumes ao vapor
+              Arroz, feijão e frango
             </p>
+          <span class="w-4 h-4" data-lucide="square-pen"></span>
+        </div>
             <p class="subtitle mt-1">Avaliação:</p>
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span class="text-gray-300">★</span>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 text-gray-400 hover:text-red-500">
+                <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
             </div>
           </div>
-
-          <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
         </div>
 
         <!-- Prato2 -->
@@ -101,23 +101,26 @@
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
-            <p class="truncate item-title">
-              (Café) Ovo cozido temperado
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="truncate item-title">
+                Strogonoff de frango
+              </p>
+            <span class="w-4 h-4" data-lucide="square-pen"></span>
+          </div>
             <p class="subtitle mt-1">Avaliação:</p>
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 text-gray-400 hover:text-red-500">
+                <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
             </div>
           </div>
-
-          <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
         </div>
 
         <!-- Prato3 -->
@@ -133,26 +136,27 @@
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
-            <p class="truncate item-title">
-              (Janta) Strogonoff de frango
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="truncate item-title">
+                Ovo cozido temperado
+              </p>
+            <span class="w-4 h-4" data-lucide="square-pen"></span>
+          </div>
             <p class="subtitle mt-1">Avaliação:</p>
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 text-gray-400 hover:text-red-500">
+                <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
             </div>
           </div>
-
-          <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
         </div>
-
-        <p class="subtitle"> 03 de Abril</p>
 
         <!-- Prato4 -->
 
@@ -163,27 +167,30 @@
           <div
             class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
           >
-        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>\
+        <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
-            <p class="truncate item-title">
-              (Café) Bolacha e achocolatado
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="truncate item-title">
+                Macarrão
+              </p>
+            <span class="w-4 h-4" data-lucide="square-pen"></span>
+          </div>
             <p class="subtitle mt-1">Avaliação:</p>
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
-              <span class="text-gray-300">★</span>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 text-gray-400 hover:text-red-500">
+                <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
             </div>
           </div>
-
-          <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
         </div>
 
         <!-- Prato5 -->
@@ -197,23 +204,26 @@
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
-            <p class="truncate item-title">
-              (Almoço) Arroz, feijão preto e frango
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="truncate item-title">
+                Carne moída
+              </p>
+            <span class="w-4 h-4" data-lucide="square-pen"></span>
+          </div>
             <p class="subtitle mt-1">Avaliação:</p>
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 text-gray-400 hover:text-red-500">
+                <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
             </div>
           </div>
-
-          <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
         </div>
 
         <!-- Prato6 -->
@@ -229,23 +239,29 @@
 
           <!-- Texto e avaliação -->
           <div class="flex-grow min-w-0">
-            <p class="truncate item-title">
-              (Janta) Strogonoff de frango
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="truncate item-title">
+                Omelete
+              </p>
+            <span class="w-4 h-4" data-lucide="square-pen"></span>
+          </div>
             <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
             <div class="flex text-yellow-400 text-sm">
               <span>★</span>
-              <span>★</span>
-              <span>★</span>
+              <span class="text-gray-300">★</span>
+              <span class="text-gray-300">★</span>
               <span class="text-gray-300">★</span>
               <span class="text-gray-300">★</span>
             </div>
+            <button class="ml-3 text-gray-400 hover:text-red-500">
+              <span class="w-4 h-4" data-lucide="trash-2"></span>
+            </button>
+          </div>
           </div>
 
           <!-- Lixeira -->
-          <button class="ml-3 text-gray-400 hover:text-red-500">
-            <span class="w-4 h-4" data-lucide="trash-2"></span>
-          </button>
+          
         </div>
       </div>
 
@@ -286,7 +302,7 @@
       </div>
     </div>
     <img src="" alt="" />
-    <script src="config.js"></script>
+    <script src="aparencia.js"></script>
     <script src="configtoggle.js"></script>
     <script>
       lucide.createIcons();
