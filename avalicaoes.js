@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Animação principal
+  // Animação inicial dos itens e header com GSAP
   const tl = gsap.timeline({
     defaults: {
       duration: 0.5,
@@ -9,16 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Anima todos os itens com stagger
   tl.from(".item", {
-    stagger: 0.15, // Intervalo de 0.15s entre cada item
+    stagger: 0.15,
     duration: 0.6,
     y: 30,
     opacity: 0,
-    ease: "back.out(1.2)", // Efeito elástico sutil
+    ease: "back.out(1.2)",
   });
 
-  // Animação adicional para o header (opcional)
   gsap.from(".header", {
     duration: 0.8,
     y: -30,
@@ -26,5 +24,4 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power2.out",
     delay: 0.2,
   });
-
 });

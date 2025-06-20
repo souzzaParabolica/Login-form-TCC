@@ -283,8 +283,15 @@
 
       <!-- Bottom nav fixo -->
       <div class="item menu nav-bar h-20 flex justify-around items-center mt-4 p-2 rounded-t-xl">
+
+        <a href="calendario.html" onclick="window.location.href='calendario.html'; return false;">
         <span data-lucide="calendar-days" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
+        <a href="reservas.html" onclick="window.location.href='reservas.html'; return false;">
         <span data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
         <a
           href="index.html"
           onclick="window.location.href='index.html'; return false;"
@@ -294,8 +301,14 @@
             class="home w-10 h-10 text-white cursor-pointer"
           ></span>
         </a>
+
+        <a href="avaliacoes.html" onclick="window.location.href='avaliacoes.html'; return false;">
         <span data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
+        <a href="config.html" onclick="window.location.href='config.html'; return false;">
         <span data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
       </div>
     </div>
 
@@ -310,7 +323,7 @@
     <div id="reservaModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
       <div class="modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
         <div class="text-center">
-          <h3 class="textmodal font-bold text-lg mb-2">Afiso</h3>
+          <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
           <p class="mb-4 textmodal">Você está efetuando uma reserva para o dia: <span id="dataReserva">04/04/2025</span></p>
           
           <div class="medalbuttons flex justify-center mt-6">
