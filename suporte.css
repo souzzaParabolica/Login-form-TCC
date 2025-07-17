@@ -173,9 +173,10 @@ body {
     padding: 5px;
 }
 
-.subtitulo{
+.subtitulo {
     color: var(--subtitle-color);
 }
+
 .icon {
     color: var(--icons-color);
 }
@@ -184,6 +185,8 @@ body {
     background-color: var(--itens-color);
     color: var(--subtitle-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
 }
 
 .menu {

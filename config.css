@@ -183,6 +183,8 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
 }
 
 .menu {
@@ -191,6 +193,8 @@ body {
 
 .item:hover {
     border: 1px solid var(--stroke-color);
+
+    /* background-color: #262729; */
 
     .arrows {
         color: var(--arrow-hover);
@@ -204,7 +208,7 @@ body {
 
 .arrows {
     color: var(--stroke-color);
-    transition: color var(--transition-duration) var(--transition-timing);
+    transition: color .3s ease-in-out;
 }
 
 .item-title {

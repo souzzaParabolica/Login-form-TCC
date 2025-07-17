@@ -18,7 +18,7 @@ body {
     --button-color: linear-gradient(135deg, #4a7b29, #6c8f3e);
     --border-button-color: 1px solid black;
     --shadow-image: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2));
-    --modal-text-color:#6d6d6d;
+    --modal-text-color: #6d6d6d;
 
 
     --stroke-color: rgba(0, 0, 0, 0.5);
@@ -189,6 +189,8 @@ body {
 .item {
     background-color: var(--itens-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
 }
 
 .menu {
@@ -215,12 +217,12 @@ body {
     background-color: var(--bg-color);
 }
 
-.prato{
+.prato {
     filter: var(--shadow-image);
     margin: 0 auto;
 }
 
-.reservar{
+.reservar {
     background: var(--button-color);
     border-radius: 14px;
     height: 50px;
@@ -231,22 +233,22 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.reservar:hover{
+.reservar:hover {
     border: var(--border-button-color);
     transform: translateY(-2px);
 }
 
-.reservar:active{
+.reservar:active {
     transform: scale(0.95);
     transform: translateY(2px);
 }
 
-.avaliacao{
+.avaliacao {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-h2{
+h2 {
     font-size: 1.5em !important;
 }
 
@@ -470,21 +472,22 @@ h2{
 
     to {
         opacity: 1;
-    } }
-
-    .textmodal{
-        color: var(--modal-text-color);
     }
+}
 
-    .modalbox{
-        background-color: var(--bg-color);
-    }
+.textmodal {
+    color: var(--modal-text-color);
+}
 
-    .medalbuttons{
-        border-top: 1px solid #515257;
-    }
+.modalbox {
+    background-color: var(--bg-color);
+}
 
-    .borda{
-        border-right: 1px solid #515257;
-        color: var(--modal-text-color);
-    }
+.medalbuttons {
+    border-top: 1px solid #515257;
+}
+
+.borda {
+    border-right: 1px solid #515257;
+    color: var(--modal-text-color);
+}

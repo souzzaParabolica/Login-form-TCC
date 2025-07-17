@@ -7,7 +7,8 @@ body {
 
 /* Adicione isso ao seu arquivo CSS se necessário */
 .hidden {
-    display: none; }
+    display: none;
+}
 
 /* variáveis */
 
@@ -28,10 +29,12 @@ body {
 /* Estilo para input inválido */
 input:invalid {
     border-color: #ef4444;
-    /* vermelho-500 */ }
+    /* vermelho-500 */
+}
 
 .hidden {
-    display: none; }
+    display: none;
+}
 
 :root {
     --switch-bg-url: url(img/sun.svg);
@@ -199,9 +202,10 @@ input:invalid {
     padding: 5px;
 }
 
-.subtitulo{
+.subtitulo {
     color: var(--subtitle-color);
 }
+
 .icon {
     color: var(--icons-color);
 }
@@ -210,6 +214,8 @@ input:invalid {
     background-color: var(--itens-color);
     color: var(--subtitle-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
 }
 
 .menu {

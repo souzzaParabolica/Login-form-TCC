@@ -183,6 +183,8 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
 }
 
 .menu {
@@ -212,7 +214,7 @@ body {
     background-color: var(--bg-color);
 }
 
-h2{
+h2 {
     font-size: 1.5em !important;
 }
 
@@ -257,4 +259,5 @@ h2{
 .search__icon {
     height: 1.3em;
     width: 1.3em;
-    fill: #b4b4b4; }
+    fill: #b4b4b4;
+}
