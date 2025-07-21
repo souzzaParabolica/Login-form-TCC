@@ -90,3 +90,39 @@ body {
 .fundo {
     background-color: var(--bg-color);
 }
+
+/* Animação para o modal */
+#reservaModal {
+    transition: opacity 0.3s ease;
+}
+
+#reservaModal:not(.hidden) {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.textmodal {
+    color: var(--modal-text-color);
+}
+
+.modalbox {
+    background-color: var(--bg-color);
+}
+
+.medalbuttons {
+    border-top: 1px solid #515257;
+}
+
+.borda {
+    border-right: 1px solid #515257;
+    color: var(--modal-text-color);
+}

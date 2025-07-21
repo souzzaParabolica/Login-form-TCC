@@ -84,7 +84,7 @@
           <div class="flex items-center gap-3">
             <img class="w-8 h-8" src="img/Limpar.png" alt="" />
             <div>
-              <p class="item-title font-semibold">Limpar cache</p>
+              <p class="item-title font-semibold">Limpar dados</p>
               <p class="subtitle text-sm text-zinc-300">
                 Excluiremos seus dados não essenciais
               </p>
@@ -129,5 +129,29 @@
     <script>
       lucide.createIcons();
     </script>
+
+    
+    <div id="limparDados" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+  <div class="item modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
+    <div class="text-center">
+      <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
+      <p class="mb-4 textmodal">
+        Todos os seus dados não essenciais como avaliações serão apagados
+      </p>
+      <div class="medalbuttons flex justify-center mt-6">
+        <div class="borda w-[50%]">
+          <button id="cancelarLimpeza" class="px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancelar
+          </button>
+        </div>
+        <div class="w-[50%]">
+          <button id="confirmarLimpeza" class="px-4 py-2 text-[#658b3a] rounded-lg font-medium transition-colors">
+            Apagar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
