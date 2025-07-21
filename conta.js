@@ -1,44 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Animação principal com timeline
+  // Animação principal
   const tl = gsap.timeline({
     defaults: {
       duration: 0.5,
       ease: "power2.out",
+      opacity: 0,
+      y: 20,
     },
   });
 
-  // Animação em sequência dos elementos
-  tl.from(".header", {
+  // Anima todos os itens com stagger
+  tl.from(".item", {
+    stagger: 0.15, // Intervalo de 0.15s entre cada item
+    duration: 0.6,
+    y: 30,
+    opacity: 0,
+    ease: "back.out(1.2)", // Efeito elástico sutil
+  });
+
+  // Animação adicional para o header (opcional)
+  gsap.from(".header", {
+    duration: 0.8,
     y: -30,
     opacity: 0,
-    duration: 0.7,
-  })
-    .from(
-      ".subtitulo",
-      {
-        y: 20,
-        opacity: 0,
-        ease: "back.out(1.2)",
-      },
-      "-=0.3"
-    ) // Sobreposição de 0.3s com a animação anterior
-    .from(
-      "#switch",
-      {
-        scale: 0.8,
-        opacity: 0,
-        ease: "elastic.out(1, 0.5)",
-      },
-      "-=0.2"
-    )
-    .from(
-      ".item",
-      {
-        stagger: 0.15, // Intervalo entre itens
-        y: 30,
-        opacity: 0,
-        ease: "back.out(1.2)",
-      },
-      "-=0.1"
-    )
+    ease: "power2.out",
+    delay: 0.2,
+  });
 });
