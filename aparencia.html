@@ -143,5 +143,35 @@
     <script>
       lucide.createIcons();
     </script>
+    <div id="avisoRestaurado" 
+     class="fixed top-[70%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
+            bg-black/50 text-white px-6 py-3 rounded-xl shadow-lg z-50
+            opacity-0 pointer-events-none transition-opacity duration-500
+            max-w-[600px] w-auto whitespace-nowrap text-center select-none">
+  Aparência restaurada com sucesso!
+</div>
+
+    <div id="restaurarAparencia" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+  <div class="item modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
+    <div class="text-center">
+      <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
+      <p class="mb-4 textmodal">
+          Suas configurações de aparência armazenadas serão restauradas
+      </p>
+      <div class="medalbuttons flex justify-center mt-6">
+        <div class="borda w-[50%]">
+          <button id="cancelarRestauracao" class="px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancelar
+          </button>
+        </div>
+        <div class="w-[50%]">
+          <button id="confirmarRestauracao" class="px-4 py-2 text-[#658b3a] rounded-lg font-medium transition-colors">
+            Restaurar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
