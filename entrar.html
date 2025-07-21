@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <script>// Verifica se o usuário prefere tema escuro
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-      }
-      
-      // Opcional: Monitorar mudanças na preferência do usuário
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-          if (event.matches) {
-              document.documentElement.classList.add('dark');
-          } else {
-              document.documentElement.classList.remove('dark');
-          }
-      });</script>
+    <script>
+  // Isso aqui executa ANTES do HTML renderizar
+  (function () {
+    const savedTheme = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'true' || (savedTheme === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+    <script>window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('darkMode');
+
+  if (savedTheme !== null) {
+    // Aplica o que está salvo (dark ou claro)
+    if (savedTheme === 'true') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } else {
+    // Se não tiver nada salvo, usa a preferência do sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+});
+</script>
       <!-- GSAP core -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
@@ -45,30 +65,6 @@
     </style>
   </head>
   <body>
-    <div id="switch" onclick="toggleMode()">
-      <button></button>
-      <span></span>
-    </div>
-
-    <!-- BOTÃO PARA VOLTAR -->
-  
-    <div class="styled-wrapper">
-      <a
-        href="index.html"
-        onclick="window.location.href='index.html'; return false;"
-      >
-        <button class="button">
-          <div class="button-box">
-            <span class="button-elem">
-              <img src="img/arrow.png" alt="" width="15px" />
-            </span>
-            <span class="button-elem">
-              <img src="img/arrow.png" alt="" width="15px" />
-            </span>
-          </div></button
-      ></a>
-    </div>
-
     <!-- IMAGEM DE CABEÇALHO -->
     <img
       id="logo-image"
@@ -133,7 +129,6 @@
         </div>
       </div>
     </div>
-    <script src="entrar.js"></script>
-    <script src="toggle.js"></script>
+    <script src="darkmode.js"></script>
   </body>
 </html>
