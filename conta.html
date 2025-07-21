@@ -61,50 +61,50 @@
         <h2 class="subtitulo font-bold">Sua conta</h2>
       </div>
 
-      <div class="space-y-3 overflow-y-auto px-4">
-        <!-- Itens -->
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <span data-lucide="user" class="w-8 h-8"></span>
-            <div>
-              <p class="item-title font-semibold">Neymar Junior</p>
-              <p class="subtitle text-sm text-zinc-300">
-                njr@etec.sp.gov.br
-              </p>
+        <div class="space-y-3 overflow-y-auto px-4">
+          <!-- Itens -->
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="user" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Neymar Junior</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  njr@etec.sp.gov.br
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <span data-lucide="log-out" class="w-8 h-8"></span>
-            <div>
-              <p class="item-title font-semibold">Sair</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Sua conta será desconectada
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span data-lucide="log-out" class="w-8 h-8"></span>
+              <div>
+                <p class="item-title font-semibold">Sair</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Sua conta será desconectada
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div
-          class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
-        >
-          <div class="flex items-center gap-3">
-            <img class="w-8 h-8" src="img/Apagar.png" alt="">
-            <div>
-              <p class="item-title font-semibold">Apagar</p>
-              <p class="subtitle text-sm text-zinc-300">
-                Sua conta e seus dados serão apagados
-              </p>
+          <div
+            class="item flex justify-between items-center p-3 rounded-lg cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <img class="w-8 h-8" src="img/Apagar.png" alt="">
+              <div>
+                <p class="item-title font-semibold">Apagar</p>
+                <p class="subtitle text-sm text-zinc-300">
+                  Sua conta e seus dados serão apagados
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       <!-- Bottom nav fixo -->
       <div
@@ -138,8 +138,57 @@
     </div>
     <script src="conta.js"></script>
     <script src="darkmode.js"></script>
-<script>
+    <script>
       lucide.createIcons();
     </script>
+
+    <div id="desconectarConta" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+  <div class="item modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
+    <div class="text-center">
+      <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
+      <p class="mb-4 textmodal">
+          Sua conta será desconectada deste navegador
+      </p>
+      <div class="medalbuttons flex justify-center mt-6">
+        <div class="borda w-[50%]">
+          <button id="cancelarLogout" class="px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancelar
+          </button>
+        </div>
+        <div class="w-[50%]">
+          <button id="confirmarLogout" class="px-4 py-2 text-[#658b3a] rounded-lg font-medium transition-colors">
+            Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal2 -->
+
+
+    <div id="apagarConta" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+  <div class="item modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto">
+    <div class="text-center">
+      <h3 class="textmodal font-bold text-lg mb-2">Aviso</h3>
+      <p class="mb-4 textmodal">
+          Sua conta e seus dados serão apagados do nosso servidor
+      </p>
+      <div class="medalbuttons flex justify-center mt-6">
+        <div class="borda w-[50%]">
+          <button id="cancelarExclusao" class="px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancelar
+          </button>
+        </div>
+        <div class="w-[50%]">
+          <button id="confirmarExclusao" class="px-4 py-2 text-[#658b3a] rounded-lg font-medium transition-colors">
+            Apagar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
