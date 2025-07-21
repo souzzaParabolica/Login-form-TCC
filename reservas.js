@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Animação principal
+  // 🌀 Animação principal com GSAP
   const tl = gsap.timeline({
     defaults: {
       duration: 0.5,
@@ -9,16 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Anima todos os itens com stagger
   tl.from(".item", {
-    stagger: 0.15, // Intervalo de 0.15s entre cada item
+    stagger: 0.15,
     duration: 0.6,
     y: 30,
     opacity: 0,
-    ease: "back.out(1.2)", // Efeito elástico sutil
+    ease: "back.out(1.2)",
   });
 
-  // Animação adicional para o header (opcional)
   gsap.from(".header", {
     duration: 0.8,
     y: -30,
@@ -27,17 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 0.2,
   });
 
-});
-
-
-  // Referências aos modais e toast
+  // 🔗 Referências aos modais e toast
   const modal02 = document.getElementById("reservaModal02");
   const modal03 = document.getElementById("reservaModal03");
   const toast = document.getElementById("toastSucesso");
 
   let pratoSelecionado = null;
 
-  // Função para fechar modal ao clicar no botão cancelar ou fora do modal
+  // 🔒 Fechamento do modal
   function configurarFechamento(modal, btnCancelarId) {
     const btnCancelar = modal.querySelector(`#${btnCancelarId}`);
     btnCancelar.addEventListener("click", () => {
@@ -53,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Função que mostra o toast animado
+  // ✅ Toast animado com GSAP
   function showToast() {
     toast.classList.remove("hidden");
     gsap.fromTo(
@@ -72,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2500);
   }
 
-  // Função para configurar o botão remover dentro do modal
+  // 🧹 Função de remoção com animação
   function configurarRemover(modal, btnRemoverId) {
     const btnRemover = modal.querySelector(`#${btnRemoverId}`);
     btnRemover.addEventListener("click", () => {
@@ -96,15 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Configurando fechamento dos modais com os IDs certos
+  // ⚙️ Configura todos os modais
   configurarFechamento(modal02, "cancelarReserva02");
   configurarFechamento(modal03, "cancelarReserva03");
-
-  // Configurando remoção com os IDs certos
   configurarRemover(modal02, "confirmarReserva02");
   configurarRemover(modal03, "confirmarReserva03");
 
-  // Configura os botões dos pratos para abrir os modais correspondentes
+  // 🎯 Botões de cada grupo de prato
   document
     .querySelectorAll(".prato1 button, .prato2 button, .prato3 button")
     .forEach((btn) => {
@@ -122,4 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal03.classList.remove("hidden");
       });
     });
-;
+
+  // 🧠 Renderiza ícones do Lucide (depois de tudo carregado)
+  lucide.createIcons();
+});
