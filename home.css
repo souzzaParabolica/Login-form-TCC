@@ -1,0 +1,152 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing);
+}
+
+/* variáveis */
+
+:root {
+    --bg-color: #eaeaea;
+    --itens-color: #fff;
+    --icons-color: #000;
+    --text-color: #000;
+    --subtitle-color: #a6a6a6;
+
+    --arrow-hover: #000;
+    --form-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --bg-color: #22211F;
+    --itens-color: #333438;
+    --icons-color: #fff;
+    --text-color: #fff;
+    --subtitle-color: #a6a6a6;
+
+    --arrow-hover: #eaeaea;
+    --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark .form-container {
+    box-shadow: var(--form-shadow);
+    border: var(--form-border);
+}
+
+.item {
+    background-color: var(--itens-color);
+    color: var(--subtitle-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
+    overflow: hidden;
+}
+
+.menu {
+    box-shadow: var(--form-shadow);
+}
+
+.item:hover {
+    border: 1px solid var(--stroke-color);
+
+    .arrows {
+        color: var(--arrow-hover);
+    }
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-weight: bold;
+}
+
+.arrows {
+    color: var(--stroke-color);
+}
+
+.item-title {
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.fundo {
+    background-color: var(--bg-color);
+}
+
+h2 {
+    font-size: 1.5em !important;
+}
+
+h3{
+    color: var(--text-color);
+}
+
+.home {
+    background-image: radial-gradient(#274313, #597731);
+    border-radius: 13px;
+}
+
+.icon {
+    color: var(--icons-color);
+}
+
+.containerPai::-webkit-scrollbar {
+    display: none;
+}
+
+.containerPai {
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.containerPai {
+    display: flex;
+    flex-wrap: nowrap;
+    /* <- impede quebra de linha */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    /* <- scroll suave */
+    -webkit-overflow-scrolling: touch;
+    /* <- bom pra mobile */
+
+    /* Fade nas bordas */
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+}
+
+.prato {
+    flex: 0 0 auto;
+    /* <- impede que o item cresça ou encolha */
+    min-width: 150px;
+    /* ou o tamanho que quiser pro card */
+    max-width: 150px;
+    /* pra manter consistente */
+
+    h3 {
+            white-space: nowrap;
+            /* não deixa quebrar a linha */
+            overflow: hidden;
+            /* esconde o que passar da largura */
+            text-overflow: ellipsis;
+            /* adiciona os "..." */
+            max-width: 100%;
+            /* ou defina um valor específico tipo 120px */
+        }
+}
+
+.arrow:hover{
+    color: var(--arrow-hover);
+}
+
+.nav-bar svg {
+    padding: 5px;
+}
