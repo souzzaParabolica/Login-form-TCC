@@ -68,7 +68,6 @@ body {
 
 .item:hover {
     background-color: var(--item-hover-dsktp);
-    /* background-color: #262729; */
 
     .arrows {
         color: var(--arrow-hover);
