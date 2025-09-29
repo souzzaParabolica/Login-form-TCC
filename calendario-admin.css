@@ -1,0 +1,133 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) var(--transition-timing),
+        color var(--transition-duration) var(--transition-timing);
+}
+
+/* variáveis */
+
+:root {
+    --bg-color: #eaeaea;
+    --itens-color: #fff;
+    --icons-color: #000;
+    --text-color: #000;
+    --subtitle-color: #a6a6a6;
+
+    --arrow-hover: #000;
+    --form-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --bg-color: #22211F;
+    --itens-color: #333438;
+    --icons-color: #fff;
+    --text-color: #fff;
+    --subtitle-color: #a6a6a6;
+
+    --arrow-hover: #eaeaea;
+    --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark .form-container {
+    box-shadow: var(--form-shadow);
+    border: var(--form-border);
+}
+
+.home {
+    background-image: radial-gradient(#274313, #597731);
+    border-radius: 13px;
+}
+
+.nav-bar svg {
+    padding: 5px;
+}
+
+.icon {
+    color: var(--icons-color);
+}
+
+.item {
+    background-color: var(--itens-color);
+    color: var(--subtitle-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid transparent;
+    transition: border .3s ease-in-out;
+}
+
+.menu {
+    box-shadow: var(--form-shadow);
+}
+
+.item:hover {
+    border: 1px solid var(--stroke-color);
+
+    .arrows {
+        color: var(--arrow-hover);
+    }
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-weight: bold;
+}
+
+.item-title {
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.fundo {
+    background-color: var(--bg-color);
+}
+
+h2 {
+    font-size: 1.5em !important;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    width: 12em;
+    transition: all ease-in-out .5s;
+}
+
+.search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+}
+
+.search__input:focus+.search__button {
+    background-color: #f0eeee;
+}
+
+.search__button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+}
+
+.search__button:hover {
+    cursor: pointer;
+}
+
+.search__icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #b4b4b4;
+}

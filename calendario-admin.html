@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script>
+  // Isso aqui executa ANTES do HTML renderizar
+  (function () {
+    const savedTheme = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'true' || (savedTheme === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+    <script>window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('darkMode');
+
+  if (savedTheme !== null) {
+    // Aplica o que está salvo (dark ou claro)
+    if (savedTheme === 'true') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } else {
+    // Se não tiver nada salvo, usa a preferência do sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+});
+
+    </script>
+    <!-- GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="calendario-admin.css" />
+  </head>
+  <body class="font-inter">
+    <!-- Tela cheia -->
+    <div class="fundo flex flex-col h-50 w-screen">
+      <div class="header flex flex-col justify-between gap-2">
+        <h1 class="font-bold icon text-xl flex items-center gap-2 px-4 pt-4">
+          <span
+            data-lucide="calendar-range"
+            class="icon w-8 h-8 cursor-pointer"
+          ></span>
+          Calendário de pratos:
+        </h1>
+
+        <p class="subtitle mx-4">Segunda-feira</p>
+      </div>
+
+      <div class="space-y-3 overflow-y-auto px-4 relative pb-24">
+        <!-- Itens -->
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prato2 -->
+
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prato3 -->
+
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="subtitle"> Terça-feira</p>
+
+        <!-- Prato4 -->
+
+        <div
+          class="item prato1 flex flex-col items-center p-3 rounded-md shadow mx-auto"
+        >
+         <span
+          data-lucide="plus"
+          class="icon text-[#a6a6a6] w-10 h-10 cursor-pointer"
+        ></span>
+        <p class="subtitle">Adicionar almoço</p>
+         
+        </div>
+
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prato5 -->
+
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prato6 -->
+
+        <div
+          class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
+        >
+          <!-- Imagem -->
+          <div
+          class="w-[80px] h-[80px] flex-shrink-0 bg-gradient-to-t from-green-500 to-blue-200 rounded-sm mr-3"
+        >
+      <img class="w-[80px] h-[80px] rounded-lg" src="img/nathan-dumlao-Xt4yZUIpRTo-unsplash.jpg" alt=""></div>
+
+          <!-- Texto e avaliação -->
+          <div class="flex-grow min-w-0">
+            <div class="flex items-center justify-between">
+            <p class="truncate item-title">
+              Arroz, feijão e frango
+            </p>
+         
+        </div>
+            <p class="subtitle mt-1">Avaliação:</p>
+            <div class="flex flex-row justify-between">
+              <div class="flex text-yellow-400 text-sm">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span class="text-gray-300">★</span>
+                <span class="text-gray-300">★</span>
+              </div>
+              <button class="ml-3 flex gap-2 text-gray-400 hover:text-red-500" data-id="1">
+                  <span class="w-4 h-4" data-lucide="square-pen"></span>
+                  <span class="w-4 h-4" data-lucide="trash-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom nav fixo -->
+      <div
+        class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 mb-0 p-2 rounded-t-xl"
+      >
+      <a href="calendario.html" onclick="window.location.href='calendario.html'; return false;">
+        <span data-lucide="calendar-days" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
+        <a href="reservas.html" onclick="window.location.href='reservas.html'; return false;">
+        <span data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
+        <a
+          href="home.html"
+          onclick="window.location.href='home.html'; return false;"
+        >
+          <span
+            data-lucide="home"
+            class="home w-10 h-10 text-white cursor-pointer"
+          ></span>
+        </a>
+
+        <a href="avaliacoes.html" onclick="window.location.href='avaliacoes.html'; return false;">
+        <span data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+
+        <a href="config.html" onclick="window.location.href='config.html'; return false;">
+        <span data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></span>
+        </a>
+    </div>
+    <script src="calendario-admin.js"></script>
+    <script src="darkmode.js"></script>
+    <script>
+      // Função para filtrar pratos com base no texto digitado
+      const inputBusca = document.querySelector('.search__input');
+      const pratos = document.querySelectorAll('.item');
+    
+      inputBusca.addEventListener('input', () => {
+        const termo = inputBusca.value.toLowerCase();
+    
+        pratos.forEach(prato => {
+          const titulo = prato.querySelector('.item-title')?.textContent.toLowerCase();
+          
+          if (titulo.includes(termo)) {
+            prato.style.display = 'flex'; // mostra o item
+          } else {
+            prato.style.display = 'none'; // esconde o item
+          }
+        });
+      });
+    </script>
+    
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

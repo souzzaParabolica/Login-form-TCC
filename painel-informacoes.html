@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script>
+      // Isso aqui executa ANTES do HTML renderizar
+      (function () {
+        const savedTheme = localStorage.getItem("darkMode");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (savedTheme === "true" || (savedTheme === null && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("darkMode");
+
+        if (savedTheme !== null) {
+          // Aplica o que está salvo (dark ou claro)
+          if (savedTheme === "true") {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } else {
+          // Se não tiver nada salvo, usa a preferência do sistema
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          if (prefersDark) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
+      });
+    </script>
+    <!-- GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/VIVAICON.jfif" />
+    <title>Configurações</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="painel-informacoes.css" />
+  </head>
+  <body class="font-inter">
+    <!-- Tela cheia -->
+    <div class="fundo flex flex-col h-50 w-screen">
+      <div
+        class="header pt-[10px] px-[20px] flex flex-col justify-between gap-3"
+      >
+        <div
+          class="banner h-[60px] px-3 relative items-center flex justify-between bg-[#57762f] rounded-[15px]"
+        >
+          <div class="flex items-center">
+            <span
+              data-lucide="home"
+              class="w-9 h-9 text-white cursor-pointer"
+            ></span>
+            <img src="img/VIVABRANCO.PNG" alt="" width="130px" />
+          </div>
+          <span
+            data-lucide="user-cog"
+            class="w-9 h-9 text-white cursor-pointer"
+          ></span>
+        </div>
+        <h2 class="font-bold text-xl">Painel de informações:</h2>
+      </div>
+    </div>
+
+    <div class="containerPai flex flex-col px-[20px] overflow-x-auto mb-[6rem]">
+      <div
+        class="item w-full gap-2 rounded-[20px] p-4 flex relative flex-col justify-start"
+      >
+        <h3 class="dia-da-semana item-title">Segunda-feira 11/09</h3>
+      </div>
+
+      <p class="subtitle">Manhã:</p>
+      <!-- item1 -->
+      <div class="item flex flex-col items-start p-3 rounded-lg flex-1 relative">
+        <div class="open-modal cursor-pointer w-full" data-target="cafeModal">
+          <h3 class="item-title text-lg font-normal">Café da manhã</h3>
+          <p class="subtitle font-semibold">89 reservas</p>
+        </div>
+        <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+        <div class="open-modal cursor-pointer w-full" data-target="almocoModal">
+          <h3 class="item-title text-lg font-normal">Almoço</h3>
+          <p class="subtitle font-semibold">105 reservas</p>
+        </div>
+      </div>
+      <!-- divisao -->
+      <p class="subtitle">Tarde:</p>
+      <!-- item2 -->
+      <div class="item flex flex-col items-start p-3 rounded-lg flex-1">
+        <div class="open-modal cursor-pointer w-full" data-target="cafeModal">
+          <h3 class="item-title text-lg font-normal">Café da manhã</h3>
+          <p class="subtitle font-semibold">89 reservas</p>
+        </div>
+        <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+        <div class="open-modal cursor-pointer w-full" data-target="almocoModal">
+          <h3 class="item-title text-lg font-normal">Almoço</h3>
+          <p class="subtitle font-semibold">105 reservas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom nav fixo -->
+    <div
+      class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 mb-0 p-2 rounded-t-xl"
+    >
+      <a
+        href="calendario.html"
+        onclick="window.location.href='calendario.html'; return false;"
+      >
+        <span
+          data-lucide="calendar-days"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+      </a>
+
+      <a
+        href="reservas.html"
+        onclick="window.location.href='reservas.html'; return false;"
+      >
+        <span
+          data-lucide="list-checks"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+      </a>
+
+      <a
+        href="home.html"
+        onclick="window.location.href='home.html'; return false;"
+      >
+        <span
+          data-lucide="home"
+          class="home w-10 h-10 text-white cursor-pointer"
+        ></span>
+      </a>
+
+      <a
+        href="avaliacoes.html"
+        onclick="window.location.href='avaliacoes.html'; return false;"
+      >
+        <span
+          data-lucide="activity"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+      </a>
+
+      <a
+        href="config.html"
+        onclick="window.location.href='config.html'; return false;"
+      >
+        <span
+          data-lucide="settings"
+          class="icon w-10 h-10 cursor-pointer"
+        ></span>
+      </a>
+    </div>
+    <script src="painel-informacoes.js"></script>
+    <script src="darkmode.js"></script>
+
+    <script>
+      lucide.createIcons();
+    </script>
+    <div id="almocoModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+      <div class="modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto bg-[var(--itens-color)]">
+        <div class="text-center">
+          <h3 class="textmodal font-bold text-lg mb-2">Almoço</h3>
+          <div class="flex justify-between items-center">
+            <p class="subtitle font-semibold">Reservas:</p>
+            <p class="subtitle font-semibold">105</p>
+        </div>
+        <!-- divisao -->
+          <div class="flex justify-between items-center my-1">
+            <p class="text-[#b22a18]">Cancelados:</p>
+            <p class="text-[#b22a18]">21</p>
+        </div>
+        <!-- divisao -->
+          <div class="flex justify-between items-center">
+            <p class="subtitle font-semibold">Porcentagem extras:</p>
+            <p class="subtitle font-semibold">+10%</p>
+        </div>
+          
+          <div class="medalbuttons flex justify-center mt-6">
+            <div class="borda w-[90%]">
+            <button id="cancelarReserva" class="text-xl py-2 rounded-lg font-medium text-[#597731]">
+              Preparar ?? Refeições
+            </button>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVISOR DE MODAL -->
+
+    <div id="cafeModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+      <div class="modalbox rounded-[20px] p-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto bg-[var(--itens-color)]">
+        <div class="text-center">
+          <h3 class="textmodal font-bold text-lg mb-2">Café da manhã</h3>
+          <div class="flex justify-between items-center">
+            <p class="subtitle font-semibold">Reservas:</p>
+            <p class="subtitle font-semibold">105</p>
+        </div>
+        <!-- divisao -->
+          <div class="flex justify-between items-center my-1">
+            <p class="text-[#b22a18]">Cancelados:</p>
+            <p class="text-[#b22a18]">21</p>
+        </div>
+        <!-- divisao -->
+          <div class="flex justify-between items-center">
+            <p class="subtitle font-semibold">Porcentagem extras:</p>
+            <p class="subtitle font-semibold">+10%</p>
+        </div>
+          
+          <div class="medalbuttons flex justify-center mt-6">
+            <div class="borda w-[90%]">
+            <button id="cancelarReserva" class="text-xl py-2 rounded-lg font-medium text-[#597731]">
+              Preparar ?? Refeições
+            </button>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- DIVISOR DE MODAL -->
+
+     <div id="diasModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+      <div class="modalbox rounded-[20px] px-6 pb-1 pt-6 w-[85%] sm:w-full sm:max-w-[400px] mx-auto bg-[var(--itens-color)]">
+        <div>
+          <h3 class="textmodal font-bold text-lg mb-2">Seleciona o dia da semana:</h3>
+            <p class="subtitle font-semibold mt-4">Segunda-feira - 11/09</p>
+            <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+        <!-- divisao -->
+          <p class="subtitle font-semibold">Terça-feira - 12/09</p>
+            <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+        <!-- divisao -->
+          <p class="subtitle font-semibold">Quarta-feira - 13/09</p>
+            <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+          <!-- divisao -->
+          <p class="subtitle font-semibold">Quinta-feira - 14/09</p>
+            <hr class="border-t-[0.5px] border-gray-300 w-full my-3" />
+            <!-- divisao -->
+          <p class="subtitle font-semibold">Sexta-feira - 15/09</p>
+            <hr class="border-t-[0.5px] border-gray-300 w-full mt-3" />
+            <!-- divisao -->
+          <div class="medalbuttons flex justify-center mt-0">
+            <div class="borda flex justify-center items-center w-[90%]">
+            <button id="cancelar" class="text-xl py-2 rounded-lg font-medium text-[#a6a6a6]">
+              Cancelar
+            </button>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+:
