@@ -13,6 +13,7 @@ body {
     --icons-color: #000;
     --text-color: #000;
     --subtitle-color: #a6a6a6;
+    --stroke-color: #a6a6a6;
 
     --arrow-hover: #000;
     --form-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -24,6 +25,7 @@ body {
     --icons-color: #fff;
     --text-color: #fff;
     --subtitle-color: #a6a6a6;
+    --stroke-color: #a6a6a6;
 
     --arrow-hover: #eaeaea;
     --form-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
@@ -41,7 +43,7 @@ body {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     border: 1px solid transparent;
-    transition: border .3s ease-in-out;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
 
@@ -80,7 +82,7 @@ h2 {
     font-size: 1.5em !important;
 }
 
-h3{
+h3 {
     color: var(--text-color);
 }
 
@@ -115,12 +117,12 @@ h3{
     /* <- bom pra mobile */
 
     /* Fade nas bordas */
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-size: 100% 100%;
-        mask-size: 100% 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
 
 .prato {
@@ -132,18 +134,18 @@ h3{
     /* pra manter consistente */
 
     h3 {
-            white-space: nowrap;
-            /* não deixa quebrar a linha */
-            overflow: hidden;
-            /* esconde o que passar da largura */
-            text-overflow: ellipsis;
-            /* adiciona os "..." */
-            max-width: 100%;
-            /* ou defina um valor específico tipo 120px */
-        }
+        white-space: nowrap;
+        /* não deixa quebrar a linha */
+        overflow: hidden;
+        /* esconde o que passar da largura */
+        text-overflow: ellipsis;
+        /* adiciona os "..." */
+        max-width: 100%;
+        /* ou defina um valor específico tipo 120px */
+    }
 }
 
-.arrow:hover{
+.arrow:hover {
     color: var(--arrow-hover);
 }
 
